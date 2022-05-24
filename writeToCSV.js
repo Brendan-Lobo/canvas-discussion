@@ -15,7 +15,6 @@ const writeToCSV = (courseId, data) => {
 
   const header = [
     'author_id',
-    'author_name',
     'post_id',
     'post_parent_id',
     'discussion_topic_title',
@@ -30,7 +29,6 @@ const writeToCSV = (courseId, data) => {
   data.forEach(discussion => {
     append(csv, [                                 // write discussion to CSV
       discussion.authorId,
-      escapeComment(discussion.authorName),
       discussion.id,
       '',                                         // discussion topics cannot have a parent ID
       escapeComment(discussion.topicTitle),
